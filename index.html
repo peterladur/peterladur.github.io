@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub Pages Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding-top: 80px;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🚀 It works!</h1>
+    <p>If you can see this, GitHub Pages is working.</p>
+    <button onclick="test()">Click me</button>
+    <p id="output"></p>
+  </div>
+
+  <script>
+    function test() {
+      document.getElementById("output").textContent =
+        "JavaScript is working ✔";
+    }
+  </script>
+
+</body>
+</html>
