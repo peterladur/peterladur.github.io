@@ -1,46 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GitHub Pages Test</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      text-align: center;
-      padding-top: 80px;
-    }
-    .card {
-      background: white;
-      padding: 30px;
-      max-width: 400px;
-      margin: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    button {
-      padding: 10px 16px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math & Engineering Portfolio</title>
+    <!-- Simple modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Weak (near-white) Blue/Green Palette */
+            --bg-color: #fafdff;         /* Very light sky blue tint */
+            --section-bg: #f7fff9;      /* Very light mint green tint */
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --accent-blue: #74b9ff;      /* Soft blue for links/highlights */
+            --accent-green: #55efc4;     /* Soft green for accents */
+            --border-color: #eef2f3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 0;
+        }
+
+        /* --- Header & Nav --- */
+        header {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        nav {
+            margin-top: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            margin-right: 20px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+            border-bottom: 1px solid var(--accent-blue);
+        }
+
+        /* --- Sections --- */
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--accent-green);
+        }
+
+        /* --- Projects --- */
+        .project-card {
+            background: var(--section-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+        }
+
+        .project-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .project-tags {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-blue);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Vitae (CV) --- */
+        .cv-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 20px;
+        }
+
+        .cv-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            min-width: 100px;
+            text-align: right;
+        }
+
+        .cv-content h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .cv-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 600px) {
+            .cv-item {
+                flex-direction: column-reverse;
+            }
+            .cv-date {
+                text-align: left;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="card">
-    <h1>🚀 It works!</h1>
-    <p>If you can see this, GitHub Pages is working.</p>
-    <button onclick="test()">Click me</button>
-    <p id="output"></p>
-  </div>
+    <div class="container">
+        <header>
+            <h1>Peter (Petr) Ladur</h1>
+            <p class="subtitle">Mathematics & Mechatronics Engineering Student</p>
+            <nav>
+                <a href="#projects">Projects</a>
+                <a href="#vitae">Vitae</a>
+                <a href="https://github.com/peterladur">GitHub</a>
+            </nav>
+        </header>
 
-  <script>
-    function test() {
-      document.getElementById("output").textContent =
-        "JavaScript is working ✔";
-    }
-  </script>
+        <!-- About / Intro -->
+        <section id="about">
+            <p>I am a second-year student currently interested in engineering, machine learning and applied mathematics. My work are 'curiosity-driven' projects exploring things which I find interesting.</p>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="project-card">
+                <span class="project-tags">Q-Learning</span>
+                <h3>Heading one</h3>
+                <p class="project-description">Description 1</p>
+            </div>
+        </section>
+
+        <!-- Vitae -->
+        <section id="vitae">
+            <h2>Vitae</h2>
+
+            <div class="cv-item">
+                <div class="cv-content">
+                    <h4>Mathematics & Engineering</h4>
+                    <p>Description 2</p>
+                </div>
+                <div class="cv-date">2025 — Pres.</div>
+            </div>
+
+
+
+        <footer>
+            <p>&copy; 2026 Peter Ladur • Built with minimalist intent</p>
+        </footer>
+    </div>
 
 </body>
 </html>
