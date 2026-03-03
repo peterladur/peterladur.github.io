@@ -1,0 +1,170 @@
+
+:root {
+    /* Weak (near-white) Blue/Green Palette */
+    --bg-color: #fafdff;         /* Very light sky blue tint */
+    --section-bg: #f7fff9;      /* Very light mint green tint */
+    --text-main: #2d3436;
+    --text-muted: #636e72;
+    --accent-blue: #74b9ff;      /* Soft blue for links/highlights */
+    --accent-green: #55efc4;     /* Soft green for accents */
+    --border-color: #eef2f3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+/* --- Header & Nav --- */
+header {
+    margin-bottom: 60px;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+nav {
+    margin-top: 24px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    margin-right: 20px;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+    border-bottom: 1px solid transparent;
+}
+
+nav a:hover {
+    color: var(--accent-blue);
+    border-bottom: 1px solid var(--accent-blue);
+}
+
+/* --- Sections --- */
+section {
+    margin-bottom: 80px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--accent-green);
+}
+
+/* --- Projects --- */
+.project-card {
+    background: var(--section-bg);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+}
+
+.project-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.project-tags {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-blue);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* --- Vitae (CV) --- */
+.cv-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-left: 2px solid var(--border-color);
+    padding-left: 20px;
+}
+
+.cv-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    min-width: 100px;
+    text-align: right;
+}
+
+.cv-content h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.cv-content p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+}
+
+@media (max-width: 600px) {
+    .cv-item {
+        flex-direction: column-reverse;
+    }
+    .cv-date {
+        text-align: left;
+        margin-bottom: 8px;
+    }
+}
