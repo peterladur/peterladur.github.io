@@ -24,6 +24,11 @@ body {
     padding: 0 20px;
 }
 
+a {
+    color: inherit; /* Or specify a color like #000000 */
+    text-decoration: none; /* Optional: removes the underline */
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
