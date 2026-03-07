@@ -5,8 +5,8 @@
     --section-bg: #f7fff9;      /* Very light mint green tint */
     --text-main: #2d3436;
     --text-muted: #636e72;
-    --accent-blue: #74b9ff;      /* Soft blue for links/highlights */
-    --accent-green: #55efc4;     /* Soft green for accents */
+    --accent-blue: #3CC2E8;      /* Soft blue for links/highlights */
+    --accent-green: #3CE89C;     /* Soft green for accents */
     --border-color: #eef2f3;
 }
 
@@ -89,9 +89,16 @@ h2::after {
     position: absolute;
     bottom: -5px;
     left: 0;
-    width: 30px;
-    height: 2px;
+    width: 80px;
+    height: 3px;
     background: var(--accent-green);
+}
+
+/* --- About Me --- */
+
+.aboutme-text{
+    font-size: 0.95rem;
+    color: var(--text-main);
 }
 
 /* --- Projects --- */
@@ -153,6 +160,15 @@ h2::after {
 .cv-content p {
     font-size: 0.9rem;
     color: var(--text-muted);
+}
+
+.cv-tags {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-blue);
+    margin-bottom: 12px;
+    display: block;
 }
 
 /* --- Footer --- */
